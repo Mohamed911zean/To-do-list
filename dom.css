@@ -1,0 +1,235 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    overflow: hidden;
+    flex-direction: column;
+    /* Stack everything vertically */
+}
+
+h1 {
+    color: #2b7bff;
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        
+}
+/* Form container */
+.form {
+    display: flex;
+    flex-direction: column;
+    /* Stack input and button vertically */
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.form:hover {
+    transform: translateY(-5px);
+    /* Hover lift effect */
+}
+
+/* Input and Button */
+#task_input {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    outline: none;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin-right: 0;
+    transition: background-color 0.3s ease;
+}
+
+#task_input:focus {
+    background-color: #ffffff;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #2b7bff;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+    /* Add some space between input and button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #1d63d1;
+    transform: scale(1.05);
+}
+
+/* Task List Styles */
+#not,
+#completed {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    width: 80vw;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* Heading Styles */
+#notHeading,
+#completedHeading {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+#notHeading::after,
+#completedHeading::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #2b7bff;
+}
+
+#completedHeading {
+    transition: all ease 0.9s;
+}
+
+#notHeading {
+    transition: all ease 0.9s;
+}
+
+#notHeading:hover {
+    color: rgb(151, 106, 113);
+    transform: translatey(-5px);
+} 
+
+
+#completedHeading:hover {
+    color: rgb(151, 106, 113);
+    transform: translatey(5px);
+}
+
+/* Task Item Styles */
+#not li,
+#completed li {
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#not li:hover,
+#completed li:hover {
+    background-color: #e1e1e1;
+    transform: translateY(-5px);
+    /* Slight hover effect */
+}
+
+.completed li {
+    background: linear-gradient(135deg, #a3d4a1, #8ccf8d);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.completed li:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Button Styles (inside tasks) */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #888;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    color: #ff5c5c;
+    transform: rotate(180deg);
+    /* Rotate effect on hover */
+}
+
+/* FAB Button for Adding Tasks */
+#addTaskButton {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #2b7bff;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#addTaskButton:hover {
+    background-color: #1d63d1;
+    transform: scale(1.1);
+}
+
+/* Completed Section Styles */
+#completed {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+#span1 {
+    background-color: aqua;
+    width: 20vh;
+    border: 3px solid rgb(65, 153, 153);
+    border-radius: 5px;
+    transition: all ease 0.6s;
+}
+
+#span1:hover {
+    transform: scale(1.2);
+    width: 60vh;
+}
